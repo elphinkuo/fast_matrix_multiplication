@@ -24,6 +24,7 @@ The element-wise multiplication method, I must note, is particularly prevalent i
 | Python 3.9       | 0.002536116 GFLOP/s |     1x         |
 | C++11 standard   | 2.31342 GFLOP/s               |     912x       |
 | C++11 eigen      | 0.521897 GFLOP/s              |     205.78x    |
+| Numpy            | 87.856 GFLOP/s                |     34,709.7773x   |
 | C++11 armadillo  | 107.782 GFLOP/s               |     __42,498.95x__ |
 | C++11 SIMD AVX   | 
 | Swift Acceleration| 1350.607 GFLOP/s             |     __532,550.639x__|
@@ -33,7 +34,7 @@ The element-wise multiplication method, I must note, is particularly prevalent i
 
 * Python 3.9
 
-  code in /dot_product/python, picked from https://youtu.be/-3Kf2ZZU-dg as benchmark base
+  code in /dot_product/python_matmul, the first method is picked from and same as Modular AI product release keynote https://youtu.be/-3Kf2ZZU-dg, as benchmark base.
   
   
 * C++11 standard
@@ -44,6 +45,10 @@ The element-wise multiplication method, I must note, is particularly prevalent i
 * C++11 eigen
 
   code in /dot_product/eigen
+
+* Numpy
+
+  code in /dot_product/python_matmul, the second method.
   
   
 * __C++11 Armadillo__ (42,498.95x acceleration)
