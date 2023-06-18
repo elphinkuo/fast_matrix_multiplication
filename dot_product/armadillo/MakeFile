@@ -1,0 +1,14 @@
+CXX = g++
+CXXFLAGS = -std=c++11 -I/opt/homebrew/opt/armadillo/include -I/opt/homebrew/opt/openblas/include -O3 -Wall
+LDFLAGS = -L/opt/homebrew/opt/armadillo/lib -L/opt/homebrew/opt/openblas/lib -larmadillo -lopenblas
+
+all: main_armadillo
+
+main_armadillo: main_armadillo.o
+	$(CXX) -o main_armadillo main_armadillo.o $(LDFLAGS)
+
+main_armadillo.o: main_armadillo.cpp
+	$(CXX) $(CXXFLAGS) -c main_armadillo.cpp
+
+clean:
+	rm -f main_armadillo.o main_armadillo
