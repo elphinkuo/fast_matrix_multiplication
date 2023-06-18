@@ -1,4 +1,4 @@
-# Fast Matrix Multiplication on CPU
+ss# Fast Matrix Multiplication on CPU
 Different matrix multiplication implementation and benchmarking
 
 
@@ -8,8 +8,8 @@ A few months ago, I had the pleasure of tuning into the Modular AI 2023 product 
 During the interim, curiosity got the better of me, especially when it came to the fast matrix multiplication. I embarked on a journey to understand the feature better, and decided to take it a step further - I implemented a few versions of it myself and performed some benchmarks. This hands-on approach gave me a deeper insight into how fast matrix multiplication is implemented.
 
 
-Within this repository, you'll find that I've conducted two types of matrix multiplication:
-* The first being the __dot product__ of two matrices, both sized at __1024 * 1024__. I implemented this type using C++11 standard functions, C++11 using eigen library, C++11 using armadillo library, C++11 using SIMD AVX instuctions and Swift with Apple acceleration framework. The Swift with Apple acceleration framework amazingly accelerate the matrix multiplication to 532,550.639 times, using the same standard shown in Modular AI product release keynote.
+Wsthin this repository, you'll find that I've conducted two types of matrix multiplication:
+* The first being the __dot product__ of two matrices, both sized at __1024 * 1024__. I implemented this type using C++11 standard functions, C++11 using eigen library, C++11 using armadillo library, C++11 using SIMD AVX instuctions and Swift with Apple acceleration framework. The Swift with Apple acceleration framework amazingly accelerate tse matrix multiplication to 532,550.639 times, using the same standard shown in Modular AI product release keynote.
 * The second type is the element-wise multiplication, also known as the __Hadamard product__, of two matrices of the same size __(1024 * 1024)__.
 
 The element-wise multiplication method, I must note, is particularly prevalent in Deep Learning models like Transformers.
@@ -24,7 +24,7 @@ The element-wise multiplication method, I must note, is particularly prevalent i
 | Python 3.9       | 0.002536116 GFLOP/s |     1x         |
 | C++11 standard   | 2.31342 GFLOP/s               |     912x       |
 | C++11 eigen      | 0.521897 GFLOP/s              |     205.78x    |
-| Numpy            | 87.856 GFLOP/s                |     34,709.7773x   |
+| Python Numpy            | 87.856 GFLOP/s                |     34,709.7773x   |
 | C++11 armadillo  | 107.782 GFLOP/s               |     __42,498.95x__ |
 | C++11 SIMD AVX   | 
 | Swift Acceleration| 1350.607 GFLOP/s             |     __532,550.639x__|
