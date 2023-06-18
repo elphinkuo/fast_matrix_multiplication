@@ -9,6 +9,63 @@ Within this repository, you'll find that I've conducted two types of matrix mult
 
 ## Dot product implementations
 
+### Acceleration Results:
+| Method           | GFLOP/s                       |  Acceleration (times)  |
+| --------         | --------                      | ------         |
+| Python 3.9       | 0.002536116 GFLOP/s |     1x         |
+| C++11 standard   | 2.31342 GFLOP/s               |     912x       |
+| C++11 eigen      | 0.521897 GFLOP/s              |     205.78x    |
+| C++11 armadillo  | 107.782 GFLOP/s               |     __42,498.95x__ |
+| C++11 SIMD AVX   | 
+| Swift Acceleration| 1350.607 GFLOP/s             |     __532,550.639x__|
+
+### Explaination:
+
+* Python 3.9
+
+  code in /dot_product/python, picked from https://youtu.be/-3Kf2ZZU-dg as benchmark base
+  
+  
+* C++11 standard
+
+  code in /dot_product/standard_c++
+  
+  
+* C++11 eigen
+
+  code in /dot_product/eigen
+  
+  
+* __C++11 Armadillo__ (42,498.95x acceleration)
+
+  code in /dot_product/armadillo
+
+  Here's a corresponding C++ version, written using the Armadillo library for linear algebra and other mathematical operations. Armadillo is well known for its high performance and efficient memory usage.
+
+  This program creates a matrix class which uses Armadillo's fmat (floating point matrix) to store its data. matmul_native performs matrix multiplication using three nested loops, and benchmark_matmul_native measures the speed of this operation in GFLOPs (billions of floating-point operations per second).
+
+  Please note that this is a simple version of the provided code and might not include all functionality that's implied by the Python code. Also, Armadillo has inbuilt high performance matrix multiplication which could be used instead of the native triple loop method.
+  
+  
+* C++11 SIMD AVX
+  
+  
+* __Swift Acceleration__ (532,550.639x acceleration)
+
+  code in /dot_product/swift
+
+  In this Swift code, cblas_sgemm is a function from the Accelerate Framework that performs general matrix multiplication. The parameters specify how the matrices are stored in memory and the dimensions of the matrices.
+   The cblas_sgemm function is part of Apple's Accelerate Framework, which is a collection of powerful and efficient numerical computing libraries. This function in particular is an implementation of general matrix multiply (GEMM), one of the fundamental operations of numerical linear algebra.
+
+  The Accelerate Framework's version of this function is highly optimized for Apple hardware, using low-level programming and hardware-specific optimizations to achieve impressive speed. This can include the use of SIMD instructions, efficient cache usage, and other advanced techniques.
+
+  Because of these optimizations, and the fact that the function is implemented in low-level code, it can be much faster than a similar function written in Swift (or other high-level languages) without such optimizations. This is why numerical computing libraries like Accelerate (or others like Intel's MKL, OpenBLAS, etc.) are widely used in scientific computing, data science, machine learning, and other fields that require heavy numerical computations.
+  
+  
+  
+
+
+
 
 ## Hadamard product implementations
 
