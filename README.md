@@ -1,4 +1,4 @@
-# fast_matrix_multiplication
+# Fast Matrix Multiplication on CPU
 Different matrix multiplication implementation and benchmarking
 
 
