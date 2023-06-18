@@ -48,7 +48,8 @@ Within this repository, you'll find that I've conducted two types of matrix mult
   
   
 * C++11 SIMD AVX
-  
+
+  code in /dot_product/simd_avx
   
 * __Swift Acceleration__ (532,550.639x acceleration)
 
