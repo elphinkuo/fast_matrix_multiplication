@@ -1,0 +1,14 @@
+CXX = g++
+CXXFLAGS = -std=c++11 -I/usr/local/include/eigen3 -I/opt/homebrew/opt/openblas/include -O3 -Wall
+LDFLAGS = -L/usr/local/include/eigen3 -L/opt/homebrew/opt/openblas/lib -lopenblas
+
+all: main_eigen
+
+main_eigen: main_eigen.o
+	$(CXX) -o main_eigen main_eigen.o $(LDFLAGS)
+
+main_eigen.o: main_eigen.cpp
+	$(CXX) $(CXXFLAGS) -c main_eigen.cpp
+
+clean:
+	rm -f main_eigen.o main_eigen

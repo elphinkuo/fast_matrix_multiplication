@@ -23,7 +23,7 @@ The element-wise multiplication method, I must note, is particularly prevalent i
 | --------         | --------                      | ------         |
 | Python 3.9       | 0.002536116 GFLOP/s |     1x         |
 | C++11 standard   | 2.31342 GFLOP/s               |     912x       |
-| C++11 eigen      | 0.521897 GFLOP/s              |     205.78x    |
+| C++11 eigen      | 33.8274 GFLOP/s              |     13,338.27x    |
 | C++11 armadillo  | 107.782 GFLOP/s               |     __42,498.95x__ |
 | C++11 SIMD AVX   | 
 | Swift Acceleration| 1350.607 GFLOP/s             |     __532,550.639x__|
