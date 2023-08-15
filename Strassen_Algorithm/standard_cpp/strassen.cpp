@@ -90,8 +90,35 @@ Matrix standard_multiplication(const Matrix& a, const Matrix& b) {
     return result;
 }
 
+bool areMatricesEqual(const Matrix &a, const Matrix &b) {
+    if (a.size() != b.size() || a[0].size() != b[0].size()) {
+        return false;
+    }
+
+    for (size_t i = 0; i < a.size(); ++i) {
+        for (size_t j = 0; j < a[i].size(); ++j) {
+            if (a[i][j] != b[i][j]) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+void printMatrix(const Matrix &matrix) {
+    for (size_t i = 0; i < matrix.size(); ++i) {
+        for (size_t j = 0; j < matrix[i].size(); ++j) {
+            std::cout << matrix[i][j] << ' ';
+        }
+        std::cout << '\n';
+    }
+}
+
+
+
 int main() {
-    int n = 128;
+    int n = 256;
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> dis(1, 100);
@@ -122,10 +149,14 @@ int main() {
     std::cout << "Strassen's Algorithm took " << strassen_time << " milliseconds\n";
     std::cout << "Standard Multiplication took " << standard_time << " milliseconds\n";
 
-    if (result_strassen == result_standard) {
+    if (areMatricesEqual(result_strassen, result_standard)) {
         std::cout << "Results match\n";
     } else {
         std::cout << "Results do not match\n";
+        std::cout << "Strassen's Algorithm Result:\n";
+        printMatrix(result_strassen);
+        std::cout << "Standard Multiplication Result:\n";
+        printMatrix(result_standard);
     }
 
     return 0;
