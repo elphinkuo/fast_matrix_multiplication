@@ -1,4 +1,5 @@
-ss# Fast Matrix Multiplication on CPU
+# Fast Matrix Multiplication on CPU
+
 Different matrix multiplication implementation and benchmarking
 
 
@@ -23,10 +24,10 @@ The element-wise multiplication method, I must note, is particularly prevalent i
 | --------         | --------                      | ------         |
 | Python 3.9       | 0.002536116 GFLOP/s |     1x         |
 | C++11 standard   | 2.31342 GFLOP/s               |     912x       |
+| C++11 SIMD AVX   | 28.2316 GFLOP/s               |     11,131.825x |
 | C++11 eigen      | 33.8274 GFLOP/s              |     13,338.27x    |
 | Python Numpy            | 87.856 GFLOP/s                |     34,709.7773x   |
 | C++11 armadillo  | 107.782 GFLOP/s               |     __42,498.95x__ |
-| C++11 SIMD AVX   | 
 | Swift Acceleration| 1350.607 GFLOP/s             |     __532,550.639x__|
 
 
@@ -40,6 +41,15 @@ The element-wise multiplication method, I must note, is particularly prevalent i
 * C++11 standard
 
   code in /dot_product/standard_c++
+
+
+* C++11 SIMD AVX
+
+  code in /dot_product/simd_avx
+
+  SIMD stands for Single Instruction, Multiple Data. SIMD allows one single operation to be applied to a set of data simultaneously, which is extremely beneficial for tasks such as matrix multiplication, where the same operation (multiplication and addition) is applied over and over.
+
+  For SIMD operations in C++, one can use the data types and intrinsic functions provided by the compiler. These will differ based on your hardware and the specific vector instruction set it supports, such as SSE, AVX, or AVX512 on Intel and AMD CPUs, or NEON on ARM CPUs.
   
   
 * C++11 eigen
@@ -61,16 +71,6 @@ The element-wise multiplication method, I must note, is particularly prevalent i
 
   Please note that this is a simple version of the provided code and might not include all functionality that's implied by the Python code. Also, Armadillo has inbuilt high performance matrix multiplication which could be used instead of the native triple loop method.
   
-  
-* C++11 SIMD AVX
-
-  code in /dot_product/simd_avx
-
-  IMD stands for Single Instruction, Multiple Data. SIMD allows one single operation to be applied to a set of data simultaneously, which is extremely beneficial for tasks such as matrix multiplication, where the same operation (multiplication and addition) is applied over and over.
-
-  For SIMD operations in C++, one can use the data types and intrinsic functions provided by the compiler. These will differ based on your hardware and the specific vector instruction set it supports, such as SSE, AVX, or AVX512 on Intel and AMD CPUs, or NEON on ARM CPUs.
-
-
   
 * __Swift Acceleration__ (532,550.639x acceleration)
 
