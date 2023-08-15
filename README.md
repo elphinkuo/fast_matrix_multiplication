@@ -89,6 +89,10 @@ The element-wise multiplication method, I must note, is particularly prevalent i
   
   
   
+## Strassen Algorithm
+
+Add a cpp implementation of Strassen Algorithm (https://en.wikipedia.org/wiki/Strassen_algorithm), which is a standard fast matrix multiplication of square matrices. The current result shows that Strassen algorithm is even worse than the current standard matrix multiplication in cpp. I doubt the performance of Strassen Algorithm using a modern cpp library. Will continue to dive in this direction in the future.
+
 
 
 
