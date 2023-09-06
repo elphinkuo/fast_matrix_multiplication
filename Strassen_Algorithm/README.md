@@ -1,3 +1,7 @@
+Add a cpp implementation of Strassen Algorithm (https://en.wikipedia.org/wiki/Strassen_algorithm), which is a standard fast matrix multiplication of square matrices. The current result shows that Strassen algorithm is even worse than the current standard matrix multiplication in cpp. I doubt the performance of Strassen Algorithm using a modern cpp library. Will continue to dive in this direction in the future.
+
+They speed of Strassen algorithm is indeed quite slow in most cases. The reason of why it is so slow might be the following after analysis:
+
 ## Why Strassen Algorithm is Slow on Modern Architectures
 
 The Strassen algorithm, although theoretically faster than classical matrix multiplication with a complexity of \(O(n^{2.81})\) as opposed to \(O(n^3)\), often underperforms on modern computer architectures for several reasons:
