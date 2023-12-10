@@ -4,3 +4,6 @@ A major goal of SYCL is to enable different heterogeneous devices to be used in 
 
 SYCL uses generic programming with templates and generic lambda functions to enable higher-level application software to be cleanly coded with optimized acceleration of kernel code across an extensive range of acceleration backend APIs, such as OpenCL and CUDA.
 
+![Alt text](https://www.khronos.org/assets/uploads/apis/2022-sycl-diagram.jpg)
+
+Above - creadit from: https://www.khronos.org/sycl/
