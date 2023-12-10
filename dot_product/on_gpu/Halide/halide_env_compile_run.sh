@@ -4,7 +4,7 @@
 set -e
 
 # Define the Halide version
-HALIDE_VERSION="release_2023_04_15" # Replace with the latest release as needed
+HALIDE_VERSION="release_2023_04_15"
 
 # Install dependencies
 echo "Installing dependencies..."
@@ -24,7 +24,7 @@ make -j$(nproc)
 # Go back to the parent directory
 cd ..
 
-# Assuming your Halide program is named "matmul.cpp"
+# Halide program is named "matmul.cpp"
 echo "Compiling your Halide program..."
 g++ matmul.cpp -g -std=c++11 -I Halide/include -L Halide/bin -lHalide -ldl -lpthread -o matmul
 
